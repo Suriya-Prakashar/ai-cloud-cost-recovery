@@ -1,0 +1,36 @@
+{
+  "account_id": "123456789012",
+  "daily_cost": {
+    "yesterday": 82,
+    "today": 416
+  },
+  "services": [
+    {
+      "service": "EC2",
+      "cost": 312
+    },
+    {
+      "service": "RDS",
+      "cost": 51
+    },
+    {
+      "service": "S3",
+      "cost": 8
+    }
+  ],
+  "resources": [
+    {
+      "id": "i-83921",
+      "type": "EC2",
+      "instance_type": "m5.4xlarge",
+      "cost": 384,
+      "cpu": 4,
+      "memory": 8,
+      "network": 2,
+      "environment": "development",
+      "owner": null,
+      "running_days": 23,
+      "recent_deployment": false
+    }
+  ]
+}
