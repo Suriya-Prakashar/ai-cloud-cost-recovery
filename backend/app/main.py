@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 
 from app.mock.mock_aws import MockAWSService
+from app.api.cost import router as cost_router
 
 
 app = FastAPI(
     title="AI Cloud Cost Recovery Agent",
-    version="0.1.0"
+    version="0.2.0"
 )
 
 aws = MockAWSService()
@@ -38,3 +39,6 @@ def get_services():
 @app.get("/mock-aws/resources")
 def get_resources():
     return aws.get_resources()
+
+
+app.include_router(cost_router)
