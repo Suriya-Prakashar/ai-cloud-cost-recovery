@@ -8,3 +8,6 @@ class CostRecoveryState(TypedDict, total=False):
     anomaly: dict
     services: list
     service_analysis: dict
+    resources: list
+    investigated_resources: list
+    evidence: list
