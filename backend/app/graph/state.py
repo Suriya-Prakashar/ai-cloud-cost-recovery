@@ -1,0 +1,10 @@
+from typing import TypedDict
+
+
+class CostRecoveryState(TypedDict, total=False):
+    account_id: str
+    billing_data: dict
+    cost_analysis: dict
+    anomaly: dict
+    services: list
+    service_analysis: dict

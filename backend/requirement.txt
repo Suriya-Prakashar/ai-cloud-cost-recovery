@@ -4,3 +4,4 @@ pydantic
 python-dotenv
 pymongo
 boto3
+pip install langgraph
