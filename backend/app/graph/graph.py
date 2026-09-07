@@ -1,6 +1,8 @@
+from app.graph import graph
 from langgraph.graph import StateGraph, START, END
 
 from app.graph.state import CostRecoveryState
+
 
 from app.graph.nodes.cost_analyzer import (
     cost_analyzer_node
@@ -20,6 +22,10 @@ from app.graph.nodes.resource_investigator import (
 
 from app.graph.nodes.evidence_collector import (
     evidence_collector_node
+)
+
+from app.graph.nodes.root_cause_analyzer import (
+    root_cause_analyzer_node
 )
 
 
@@ -58,6 +64,11 @@ def build_cost_recovery_graph():
         evidence_collector_node
     )
 
+    graph.add_node(
+        "root_cause_analyzer",
+        root_cause_analyzer_node
+)
+
     # -------------------------
     # Edges
     # -------------------------
@@ -89,6 +100,11 @@ def build_cost_recovery_graph():
 
     graph.add_edge(
         "evidence_collector",
+        "root_cause_analyzer"
+    )
+
+    graph.add_edge(
+        "root_cause_analyzer",
         END
     )
 

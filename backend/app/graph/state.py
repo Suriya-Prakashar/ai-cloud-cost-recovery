@@ -11,3 +11,4 @@ class CostRecoveryState(TypedDict, total=False):
     resources: list
     investigated_resources: list
     evidence: list
+    root_cause: dict

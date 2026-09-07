@@ -31,5 +31,9 @@ def analyze_cost():
         "evidence": result.get(
             "evidence",
             []
-        )
+        ),
+        "root_cause": result.get(
+            "root_cause",
+            {}
+        ),
     }

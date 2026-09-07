@@ -23,6 +23,7 @@ print("\nService Analysis:")
 print(result["service_analysis"])
 
 
+
 print("\nInvestigated Resources:")
 
 for resource in result.get(
@@ -39,3 +40,6 @@ for item in result.get(
     []
 ):
     print(item)
+
+print("\nRoot Cause:")
+print(result["root_cause"])
