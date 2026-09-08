@@ -36,4 +36,13 @@ def analyze_cost():
             "root_cause",
             {}
         ),
+        "strategies": result.get(
+            "strategies",
+            []
+        ),
+
+        "savings": result.get(
+            "savings",
+            {}
+        )
     }

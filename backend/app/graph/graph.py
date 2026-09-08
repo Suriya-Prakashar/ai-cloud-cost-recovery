@@ -28,6 +28,14 @@ from app.graph.nodes.root_cause_analyzer import (
     root_cause_analyzer_node
 )
 
+from app.graph.nodes.optimization_planner import (
+    optimization_planner_node
+)
+
+from app.graph.nodes.savings_simulator import (
+    savings_simulator_node
+)
+
 
 def build_cost_recovery_graph():
 
@@ -67,7 +75,17 @@ def build_cost_recovery_graph():
     graph.add_node(
         "root_cause_analyzer",
         root_cause_analyzer_node
-)
+    )
+
+    graph.add_node(
+        "optimization_planner",
+        optimization_planner_node
+    )
+
+    graph.add_node(
+        "savings_simulator",
+        savings_simulator_node
+    )
 
     # -------------------------
     # Edges
@@ -105,6 +123,16 @@ def build_cost_recovery_graph():
 
     graph.add_edge(
         "root_cause_analyzer",
+        "optimization_planner"
+    )
+
+    graph.add_edge(
+        "optimization_planner",
+        "savings_simulator"
+    )
+
+    graph.add_edge(
+        "savings_simulator",
         END
     )
 

@@ -43,3 +43,15 @@ for item in result.get(
 
 print("\nRoot Cause:")
 print(result["root_cause"])
+
+print("\nOptimization Strategies:")
+
+for strategy in result.get(
+    "strategies",
+    []
+):
+    print(strategy)
+
+
+print("\nSavings Simulation:")
+print(result["savings"])
